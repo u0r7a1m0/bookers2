@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Bookers2</title>
+    <script src="https://kit.fontawesome.com/c1c2279c79.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -26,32 +27,44 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
 
             <!--ナビゲーション-->
+            
             <ul class="navbar-nav ml-auto">
+            <!--サインイン状態の場合-->
             <% if user_signed_in? %>
-            <li class="nav-item">
-              <i class="fa-solid fa-house"></i><%= link_to 'Home', books_path, class: 'nav-link text-white' %>
+
+            <li class="nav-item d-flex">
+              <i class="fa-solid fa-house"></i>
+              <%= link_to 'Home', books_path, class: 'nav-link text-white d-inline' %>
             </li>
             <li class="nav-item">
-              <%= link_to 'Users', books_path, class: 'nav-link text-white' %>
+              <i class="fa-solid fa-users"></i>
+              <%= link_to 'Users', books_path, class: 'nav-link text-white d-inline' %>
             </li>
             <li class="nav-item">
-              <%= link_to 'Books', books_path, class: 'nav-link text-white' %>
+              <i class="fa-solid fa-book-open"></i>
+              <%= link_to 'Books', books_path, class: 'nav-link text-white d-inline' %>
             </li>
             <li class="nav-item">
-              <i class="fa-solid fa-house text-white"></i><%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link text-white' %>
+              <i class="fa-solid fa-right-from-bracket"></i>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link text-white d-inline' %>
             </li>
+            <!--未ログイン状態の場合-->
             <% else %>
             <li class="nav-item">
               <i class="fa-solid fa-house"></i>
-            </li><%= link_to 'Home', books_path, class: 'nav-link text-white' %>
-            <li class="nav-item">
-              <%= link_to 'Users', books_path, class: 'nav-link text-white' %>
+              <%= link_to 'Home', root_path, class: 'nav-link text-white d-inline' %>
             </li>
             <li class="nav-item">
-              <%= link_to 'Books', books_path, class: 'nav-link text-white' %>
+              <i class="fa-solid fa-link"></i>
+              <%= link_to 'About', home_about_path, class: 'nav-link text-white d-inline' %>
             </li>
             <li class="nav-item">
-              <i class="fa-solid fa-house text-white"></i><%= link_to "Log in", new_user_session_path, class: 'nav-link text-white' %>
+              <i class="fa-solid fa-user-plus"></i>
+              <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link text-white d-inline' %>
+            </li>
+            <li class="nav-item">
+              <i class="fa-solid fa-right-to-bracket"></i>
+              <%= link_to "Log in", new_user_session_path, class: 'nav-link text-white d-inline' %>
             </li>
             <% end %>
             </ul>
@@ -60,11 +73,11 @@
       </nav>
     </header>
     <!--ヘッダーここまで-->
-    <main class="mb-auto">
+    <main>
     <%= yield %>
     </main>
     <!--フッターここから↓-->
-    <footer>
+    <footer class="container p-5">
       <div class="d-flex justify-content-center">
         <p>CopyRight Infratop.inc</p>
       </div>
