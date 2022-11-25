@@ -1,5 +1,47 @@
-<div class="container">
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<div class="container p-3">
+
+
+  <div class="profile-container">
+    <h1>User info</h1>
+  <p>画像</p>
+  <table>
+    <th>画像</th>
+    <tr>
+      <td>name</td>
+      <td><%= @user.name %></td>
+    </tr>
+    <tr>
+      <td>introduction</td>
+      <td><%= @user.introduction %></td>
+    </tr>
+  
+    <p>introduction</p>
+
+  <% if @user.id == current_user.id %>
+  <p><%= link_to "編集", edit_user_path(@user) %></p>
+  <% end %>
+    </table>
+  </div>
+  
+  
+  <!--投稿フォーム-->
+  <h1>New book</h1>
+  <div class="container">
+    <div class="row">
+    <!-- 以下を追加 -->
+    <div class="col-lg-4" style="background-color: orange;">
+    <p>titleとbody</p>
+    </div>
+    
+    
+    
+    
+    <!---->
+    <div class="col-lg-8">
+    <h1>Books</h1>
+    <table class="table table-striped">
+      </div> 
 
 </div>
