@@ -19,3 +19,15 @@
    margin:0;
    padding:0;
  }
+
+.log-in:hover{
+   background-color: #008080;
+}
+.sign-up:hover{
+   backgroud-color:#006600;
+}
+
+.bg-success:hover{
+   background-color: pink;
+}
+

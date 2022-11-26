@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
   before_action :is_matching_login_user, only: [:edit, :update]
-
+  # showアクション：済
   def show
     @user = User.find(params[:id])
   end
-
+  # Editアクション：済
   def edit
     @user = User.find(params[:id])
     if @user == current_user
@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       redirect_to user_path(current_user)
     end
   end
-  
+  # 
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
