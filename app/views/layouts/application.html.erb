@@ -31,23 +31,31 @@
             <% if user_signed_in? %>
             <!--ホーム-->
             <li class="nav-item">
+              <%= link_to user_path(current_user.id), class: 'nav-link text-white' do %>
               <i class="fa-solid fa-house"></i>
-              <%= link_to 'Home', user_path(current_user.id), class: 'nav-link text-white d-inline' %>
+              Home
+              <% end %>
             </li>
             <!--ユーザーズ-->
             <li class="nav-item">
+              <%= link_to user_path(current_user), class: 'nav-link text-white' do %>
               <i class="fa-solid fa-users"></i>
-              <%= link_to 'Users', user_path(current_user), class: 'nav-link text-white d-inline' %>
+              Users
+              <% end %>
             </li>
             <!--ブックス-->
             <li class="nav-item">
+              <%= link_to books_path, class: 'nav-link text-white' do %>
               <i class="fa-solid fa-book-open"></i>
-              <%= link_to 'Books', books_path, class: 'nav-link text-white d-inline' %>
+              Books
+              <% end %>
             </li>
             <!--ログアウト-->
             <li class="nav-item">
+              <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link text-white' do %>
               <i class="fa-solid fa-right-from-bracket"></i>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link text-white d-inline' %>
+              Log out
+              <% end %>
             </li>
             
             <!--未ログイン状態の場合-->
@@ -55,23 +63,31 @@
             
             <!--ホーム-->
             <li class="nav-item">
+              <%= link_to root_path, class: 'nav-link text-white' do %>
               <i class="fa-solid fa-house"></i>
-              <%= link_to 'Home', root_path, class: 'nav-link text-white d-inline' %>
+              Home
+              <% end %>
             </li>
             <!--アバウト-->
             <li class="nav-item">
+              <%= link_to home_about_path, class: 'nav-link text-white' do %>
               <i class="fa-solid fa-link"></i>
-              <%= link_to 'About', home_about_path, class: 'nav-link text-white d-inline' %>
+              About
+              <% end %>
             </li>
             <!--サインアップ-->
             <li class="nav-item">
+              <%= link_to new_user_registration_path, class: 'nav-link text-white' do %>
               <i class="fa-solid fa-user-plus"></i>
-              <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link text-white d-inline' %>
+              Sign up
+              <% end %>
             </li>
             <!--ログイン-->
             <li class="nav-item">
+              <%= link_to new_user_session_path, class: 'nav-link text-white' do %>
               <i class="fa-solid fa-right-to-bracket"></i>
-              <%= link_to "Log in", new_user_session_path, class: 'nav-link text-white d-inline' %>
+              Log in
+              <% end %>
             </li>
             <% end %>
             </ul>

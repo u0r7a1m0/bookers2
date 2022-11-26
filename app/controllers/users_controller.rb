@@ -1,5 +1,20 @@
 class UsersController < ApplicationController
   before_action :is_matching_login_user, only: [:edit, :update]
+  def new
+    @book = Book.new
+  end
+  def create
+    @book = Book.new(book_params)
+    if @book.save
+    # 投稿成功した場合
+    flash[:success]="Book was successfully created."
+    redirect_to book_path(@book.id)
+    else
+    # 投稿が失敗した場合
+    @books=Book.all
+    render :index
+    end
+  end
   # showアクション：済
   def show
     @user = User.find(params[:id])
@@ -19,6 +34,7 @@ class UsersController < ApplicationController
     @user.update(user_params)
     redirect_to user_path(@user.id)
   end
+
 
   private
 
