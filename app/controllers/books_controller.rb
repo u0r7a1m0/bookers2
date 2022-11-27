@@ -5,6 +5,8 @@ class BooksController < ApplicationController
   end
   def create
     @book = Book.new(book_params)
+    @book.user_id = current_user.id
+    
     if @book.save
       # 投稿成功した場合
       flash[:success]="Book was successfully created."
@@ -17,5 +19,8 @@ class BooksController < ApplicationController
   end
   def show
     
+  end
+  def book_params
+    params.require(:book).permit(:title, :body)
   end
 end

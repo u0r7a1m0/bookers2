@@ -2,7 +2,7 @@
 
       
   <h2 class="mt-3">User info</h2>
-  <%= form_with model: @book do |f| %>
+  <%= form_with model: @user do |f| %>
   
   <label for="inputName">Name</label>
   <p><%= f.text_field :name, autofocus: true, id:"inputName", class:'form-control' %></p>
@@ -14,9 +14,12 @@
   <p><%= f.text_field :introduction, autofocus: true, id:"inputIntroduction", class:'form-control' %></p>
   
   
-  <button type="submit" class="btn btn-secondary">
-  Update User
-  </button>
+  <!--<button type="submit" class="btn btn-secondary">-->
+  <!--Update User-->
+  <!--</button>-->
+  <%= f.submit "Update User",class: "btn btn-secondary" %>
   <% end %>
+  
+
 </div>
 
