@@ -6,15 +6,15 @@
         <h2>User info</h2>
         <table class="container">
           <tr class="border-bottom">
-            <th><%= image_tag current_user.get_profile_image(200,200) %>️</th>
+            <th><%= image_tag user.get_profile_image(200,200) %>️</th>
           </tr>
           <tr class="border-bottom p-2">
             <th class="p-2">name</th>
-            <td class="p-2"><%= current_user.name %></td>
+            <td class="p-2"><%= user.name %></td>
           </tr>
           <tr>
             <th class="p-2">introduction</th>
-            <td class="p-2"><%= current_user.introduction %></td>
+            <td class="p-2"><%= user.introduction %></td>
           </tr>
         </table>
         <%= link_to edit_user_path(current_user) ,class:"btn btn-outline-secondary col-12 mt-5 mb-3" do %>

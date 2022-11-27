@@ -1,2 +1,11 @@
-<%= render 'user',current_user: @user, book: @book %>
+<div class="container d-md-flex">
+  <!--部分テンプレート-->
+  <div class="template">
+    <%= render 'user',user: @user, book: @book %>
+  </div>
 
+  <!--Usersのshow右側-->
+  <div class="users-show">
+    <h2>Usersのshow画面</h2>
+  </div>
+</div>
