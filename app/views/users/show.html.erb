@@ -3,9 +3,21 @@
   <div class="template">
     <%= render 'user',user: @user, book: @book %>
   </div>
-
   <!--Usersのshow右側-->
-  <div class="users-show">
-    <h2>Usersのshow画面</h2>
-  </div>
+    <div class="col-lg-8 ml-5 mt-3">
+      <h2>Books</h2>
+      <table class="col-12 border-top">
+        <tr class="border-bottom">
+          <th></th>
+          <th class="p-2">Title</th>
+          <th class="p-2">Opinion</th>
+        <th></th>
+      </tr>
+      <tr class="border-bottom">
+        <td>画像</td>
+        <td>タイトル</td>
+        <td>説明</td>
+      </tr>
+    </table>
+
 </div>

@@ -1,4 +1,18 @@
-<div class="container">
-<h1>Books#show</h1>
+
+<div class="container d-md-flex">
+  <!--部分テンプレート-->
+  <div class="template">
   <%= render 'users/user', user: @user, book: @book %>
+  </div>
+  <!--Booksのshow右側-->
+    <div class="col-lg-8 ml-5 mt-3">
+      <h2>Book detail</h2>
+      <table class="col-12 border-top">
+      <tr>
+        <td>画像&名前</td>
+        <td>タイトル</td>
+        <td>説明</td>
+      </tr>
+    </table>
+
 </div>
