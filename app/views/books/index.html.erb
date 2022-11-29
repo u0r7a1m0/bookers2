@@ -2,19 +2,23 @@
   <div class="template">
   <%= render 'users/user', user: current_user, book: @book %>
   </div>
-    <div class="col-lg-8 border ml-5 mt-3">
-      <h2 class="border-bottom">Books</h2>
-      <table class="col-12">
-        <tr class="border-bottom">
+    <div class="col-lg-8 ml-md-5 mt-3">
+      <h2>Books</h2>
+      <table class="col-12 border-top table table-hover">
+        <tr class="border-top">
           <th></th>
           <th>Title</th>
           <th>Opinion</th>
         </tr>
         <% @books.each do |book| %>
         <tr>
-          <td><%= image_tag book.user.get_profile_image(200,200) %></td>
+          <td class="p-2">
+            <%= link_to user_path(book.user) do %>
+            <%= image_tag book.user.get_profile_image(80,80) %>
+            <% end %>
+          </td>
           <!--books/(:id)のリンク-->
-          <td><%= book.title %></td>
+          <td><%= link_to book.title, book_path(book.id) %></td>
           <td><%= book.body %></td>
         </tr>
         <% end %>

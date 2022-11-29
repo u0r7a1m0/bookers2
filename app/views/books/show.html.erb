@@ -9,9 +9,15 @@
       <h2>Book detail</h2>
       <table class="col-12 border-top">
       <tr>
-        <td>画像&名前</td>
+        <td class="d-flex">
+          <%# @books.each do |book| %> 
+            <%#= link_to user_path do %>
+          <%# end %>
+        </td>
         <td>タイトル</td>
         <td>説明</td>
+        <td>Edit(current_userのみ)</td>
+        <td>Destroy(current_userのみ)</td>
       </tr>
     </table>
 

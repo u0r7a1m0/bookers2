@@ -15,7 +15,7 @@ class BooksController < ApplicationController
     else
       # 投稿が失敗した場合
       @books=Book.all
-      render :index
+      render :show
     end
   end
   def show
@@ -23,6 +23,9 @@ class BooksController < ApplicationController
     @books = Book.find(params[:id])
     @user = @books.user
   end
+  # def user_params
+  #   params.require(:user).permit(:name, :profile_image, :introduction)
+  # end
   def book_params
     params.require(:book).permit(:title, :body)
   end
