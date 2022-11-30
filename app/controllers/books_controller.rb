@@ -10,31 +10,33 @@ class BooksController < ApplicationController
 
     if @book.save
       # 投稿成功した場合
-      flash[:success]="Book was successfully created."
+      flash[:notice]="You have created book successfully."
       redirect_to book_path(@book.id)
     else
       # 投稿が失敗した場合
       @books=Book.all
-      render :show
+      render :index
     end
   end
-  
+
   def edit
     @book = Book.find(params[:id])
-    
   end
-  
+
+
+
+
   def update
     @book = Book.find(params[:id])
     if @book.update(book_params)
       # 更新に成功したときの処理
-      flash[:success]="Book was successfully created."
+      flash[:notice]="You have updated book successfully."
       redirect_to book_path(@book.id)
     else
-      render 'show'
+      render 'edit'
     end
   end
-  
+
   def show
     @book = Book.new
     @books = Book.find(params[:id])

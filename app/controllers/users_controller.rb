@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @book = Book.new(book_params)
     if @book.save
     # 投稿成功した場合
-    flash[:success]="Book was successfully created."
+    flash[:notice]="You have created book successfully."
     redirect_to book_path(@book.id)
     else
     # 投稿が失敗した場合
@@ -37,8 +37,13 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.update(user_params)
-    redirect_to user_path(@user.id)
+    if @user.update(user_params)
+    # 更新に成功したときの処理
+      flash[:notice]="You have updated user successfully."
+      redirect_to user_path(@user.id)
+    else
+      render 'edit'
+    end
   end
 
   private
