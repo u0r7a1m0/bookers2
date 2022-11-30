@@ -5,20 +5,25 @@
   <%= render 'users/user', user: @user, book: @book %>
   </div>
   <!--Booksのshow右側-->
-    <div class="col-lg-8 ml-5 mt-3">
-      <h2>Book detail</h2>
-      <table class="col-12 border-top">
+  <div class="col-lg-8 ml-md-5 mt-3">
+    <h2>Book detail</h2>
+    <table class="table col-12 border-top">
       <tr>
-        <td class="d-flex">
-          <%# @books.each do |book| %> 
-            <%#= link_to user_path do %>
-          <%# end %>
+        <!--名前&画像-->
+        <td class="align-top">
+          <p class="pl-3"><%= image_tag @books.user.get_profile_image(100,100) %></p>
+          <p class="pl-3"><%= link_to @books.user.name, user_path(@user.id)%></p>
         </td>
-        <td>タイトル</td>
-        <td>説明</td>
-        <td>Edit(current_userのみ)</td>
-        <td>Destroy(current_userのみ)</td>
+        <!--タイトル-->
+        <td class="align-top pt-3"><%= link_to @books.title, book_path(@books.id) %></td>
+        <!--説明-->
+        <td class="align-top pt-3"><%= @books.body %></td>
+         <!--「Edit」&「Destroy」ボタン-->
+       <% if @user== current_user %>
+        <td class="align-top pt-3"><%= link_to "Edit", edit_book_path, class:'btn bg-success text-white' %></td>
+        <td class="align-top pt-3"><%= link_to "Destroy", book_path, method: :delete, "data-confirm" => "本当に消しますか？", class:'btn bg-danger text-white' %></td>
+        <% end %>
       </tr>
     </table>
-
+  </div>
 </div>
