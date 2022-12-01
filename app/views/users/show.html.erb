@@ -1,17 +1,14 @@
 <p class="notice"><%= notice %></p>
-
-<main class="container mt-3">
-
-
-  <div class="container d-md-flex">
+<div class="container">
+  <div class="row">
     <!--部分テンプレート-->
-    <div class="template">
+    <div class="col-md-3">
       <%= render 'user',user: @user, book: @book %>
     </div>
     <!--Usersのshow右側-->
-      <div class="col-lg-8 ml-md-5 mt-3">
+      <div class="col-md-8 offset-md-1">
         <h2>Books</h2>
-        <table class="table col-12 border-top table table-hover">
+        <table class="table border-top table table-hover">
           <thead>
             <tr class="border-top">
               <th></th>
@@ -34,5 +31,6 @@
         <% end %>
       </table>
 
+    </div>
   </div>
-</main>
+</div>

@@ -1,33 +1,36 @@
+<!--フラッシュメッセージ-->
 <p class="notice"><%= notice %></p>
 
-<main class="container pt-3">
-
-<div class="container d-md-flex">
+<div class="container">
   <!--部分テンプレート-->
-  <div class="template">
-  <%= render 'users/user', user: @user, book: @book %>
-  </div>
-  <!--Booksのshow右側-->
-  <div class="col-lg-8 ml-md-5">
-    <h2>Book detail</h2>
-    <table class="table col-12 border-top">
-      <tr>
-        <!--名前&画像-->
-        <td class="align-top">
-          <p class="pl-1"><%= image_tag @books.user.get_profile_image(100,100) %></p>
-          <p class="pl-1"><%= link_to @books.user.name, user_path(@user.id)%></p>
-        </td>
-        <!--タイトル-->
-        <td class="align-top pt-3"><%= link_to @books.title, book_path(@books.id) %></td>
-        <!--説明-->
-        <td class="align-top pt-3"><%= @books.body %></td>
-         <!--「Edit」&「Destroy」ボタン-->
-       <% if @user== current_user %>
-        <td class="align-top pt-3"><%= link_to "Edit", edit_book_path(@books.id), class:'btn bg-success text-white' %></td>
-        <td class="align-top pt-3"><%= link_to "Destroy", book_path, method: :delete, "data-confirm" => "本当に消しますか？", class:'btn bg-danger text-white' %></td>
-        <% end %>
-      </tr>
-    </table>
+  <div class="row">
+    <div class="col-md-3">
+      <%= render 'users/user', user: @user, book: @book %>
+    </div>
+  <!--</div>-->
+
+    <!--Booksのshow右側-->
+  <!--<div class="row-md-12">-->
+    <div class="col-md-8 offset-md-1">
+      <h2>Book detail</h2>
+      <table class="table border-top">
+        <tr>
+          <!--名前&画像-->
+          <td class="align-top">
+            <p class="pl-1"><%= image_tag @books.user.get_profile_image(100,100) %></p>
+            <p class="pl-1"><%= link_to @books.user.name, user_path(@user.id)%></p>
+          </td>
+          <!--タイトル-->
+          <td class="align-top pt-3"><%= link_to @books.title, book_path(@books.id) %></td>
+          <!--説明-->
+          <td class="align-top pt-3"><%= @books.body %></td>
+           <!--「Edit」&「Destroy」ボタン-->
+          <% if @user== current_user %>
+          <td class="align-top pt-3"><%= link_to "Edit", edit_book_path(@books.id), class:'btn bg-success text-white' %></td>
+          <td class="align-top pt-3"><%= link_to "Destroy", book_path, method: :delete, "data-confirm" => "本当に消しますか？", class:'btn bg-danger text-white' %></td>
+          <% end %>
+        </tr>
+      </table>
+    </div>
   </div>
 </div>
-</main>

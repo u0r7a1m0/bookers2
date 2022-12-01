@@ -1,29 +1,29 @@
-<main class="container mt-3">
-<div class="container d-md-flex">
-  <!--部分テンプレート-->
-  <div class="template">
-    <%= render 'user',user: current_user,book: @book %>
-  </div>
+<div class="container">
+  <div class="row d-md-flex mt-3">
+    <!--部分テンプレート-->
+    <div class="col-md-3">
+      <%= render 'user',user: current_user,book: @book %>
+    </div>
 
-  <!--Usersのindex右側-->
-  <div class="col-lg-8 ml-md-5">
+    <!--Usersのindex右側-->
+    <div class="col-md-8 offset-md-1">
       <h2>Users</h2>
       <table class="table col-12 border-top">
-          <thead>
-            <tr class="border-bottom">
-              <th class="p-2">image</th>
-              <th class="p-2">name</th>
-              <th></th>
-            </tr>
-          </thead>
-          <% @users.each do |user| %>
-          <tr class="border-top p-3">
-            <td class="align-top"><%= image_tag user.get_profile_image(80,80) %></td>
-            <td class="align-top"><%= user.name %></td>
-            <td class="align-top"><%= link_to 'Show', user_path(user.id) %></td>
+        <thead>
+          <tr class="border-bottom">
+            <th class="p-2">image</th>
+            <th class="p-2">name</th>
+            <th></th>
           </tr>
-          <% end %>
-    </table>
+        </thead>
+        <% @users.each do |user| %>
+        <tr class="border-top p-3">
+          <td class="align-top"><%= image_tag user.get_profile_image(80,80) %></td>
+          <td class="align-top"><%= user.name %></td>
+          <td class="align-top"><%= link_to 'Show', user_path(user.id) %></td>
+        </tr>
+        <% end %>
+      </table>
   </div>
 </div>
-</main>
+</div>
