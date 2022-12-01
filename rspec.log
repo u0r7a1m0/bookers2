@@ -353,17 +353,17 @@ Failures:
 
   7) [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 表示の確認 「Editing Book」と表示される
      [31mFailure/Error: expect(page).to have_content 'Editing Book'[0m
-     [31m  expected to find text "Editing Book" in "Bookers\nHome Users Books Log out\nUser info\n️ name xzx1v64vw1 introduction fx5at9dm1cf9cbho69rk\nNew book\nTitle\nOpinion\nBooks\nTitle Opinion 3pcw1 dop608hp14s36rm3fmop mib1q mnm9zze3fzwafz2116nh\nCopyRight Infratop.inc"[0m
+     [31m  expected to find text "Editing Book" in "Bookers\nHome Users Books Log out\nUser info\n️ name 9b0ii37hbc introduction u9gxe3fnbb7uy1fk62s5\nNew book\nTitle\nOpinion\nBooks\nTitle Opinion 3r0pt cylp1xx9tet8af1tes3m v0bdg 78hnhsqeofm5glll8n2a\nCopyRight Infratop.inc"[0m
      [36m# ./spec/system/02_after_login_spec.rb:217:in `block (4 levels) in <main>'[0m
 
   8) [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 表示の確認 title編集フォームが表示される
      [31mFailure/Error: expect(page).to have_field 'book[title]', with: book.title[0m
-     [31m  expected to find visible field "book[title]" that is not disabled with value "p9huq" but there were no matches. Also found "", which matched the selector but not all filters. Expected value to be "p9huq" but was nil[0m
+     [31m  expected to find visible field "book[title]" that is not disabled with value "denok" but there were no matches. Also found "", which matched the selector but not all filters. Expected value to be "denok" but was nil[0m
      [36m# ./spec/system/02_after_login_spec.rb:220:in `block (4 levels) in <main>'[0m
 
   9) [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 表示の確認 body編集フォームが表示される
      [31mFailure/Error: expect(page).to have_field 'book[body]', with: book.body[0m
-     [31m  expected to find visible field "book[body]" that is not disabled with value "t4nyxj48tggoiv26dv46" but there were no matches. Also found "", which matched the selector but not all filters. Expected value to be "t4nyxj48tggoiv26dv46" but was ""[0m
+     [31m  expected to find visible field "book[body]" that is not disabled with value "uqao8hs42lrygnj372m5" but there were no matches. Also found "", which matched the selector but not all filters. Expected value to be "uqao8hs42lrygnj372m5" but was ""[0m
      [36m# ./spec/system/02_after_login_spec.rb:223:in `block (4 levels) in <main>'[0m
 
   10) [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 表示の確認 Update Bookボタンが表示される
@@ -570,7 +570,7 @@ Failures:
       [31m  expected to find css ".fas.fa-sign-out-alt" but there were no matches[0m
       [36m# ./spec/system/03_finishing_touches_spec.rb:415:in `block (4 levels) in <main>'[0m
 
-Finished in 30.88 seconds (files took 2.55 seconds to load)
+Finished in 31 seconds (files took 1.32 seconds to load)
 [31m199 examples, 35 failures[0m
 
 Failed examples:

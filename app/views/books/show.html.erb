@@ -23,7 +23,7 @@
         <td class="align-top pt-3"><%= @books.body %></td>
          <!--「Edit」&「Destroy」ボタン-->
        <% if @user== current_user %>
-        <td class="align-top pt-3"><%= link_to "Edit", edit_book_path, class:'btn bg-success text-white' %></td>
+        <td class="align-top pt-3"><%= link_to "Edit", edit_book_path(@books.id), class:'btn bg-success text-white' %></td>
         <td class="align-top pt-3"><%= link_to "Destroy", book_path, method: :delete, "data-confirm" => "本当に消しますか？", class:'btn bg-danger text-white' %></td>
         <% end %>
       </tr>

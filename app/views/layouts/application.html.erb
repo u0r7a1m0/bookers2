@@ -17,7 +17,7 @@
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
           <a class="navbar-brand p-1 text-white" href="/">Bookers</a>
-          
+
           <!--レスポンシブボタン-->
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -25,67 +25,67 @@
           <!--レスポンシブボタンここまで-->
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <!--ナビゲーション-->
-            
+
             <ul class="navbar-nav ml-auto">
             <!--サインイン状態の場合-->
             <% if user_signed_in? %>
             <!--ホーム-->
             <li class="nav-item">
               <%= link_to user_path(current_user.id), class: 'nav-link text-white' do %>
-              <i class="fa-solid fa-house"></i>
+              <i class="fas fa-home"></i>
               Home
               <% end %>
             </li>
             <!--ユーザーズ-->
             <li class="nav-item">
               <%= link_to users_path, class: 'nav-link text-white' do %>
-              <i class="fa-solid fa-users"></i>
+              <i class="fas fa-users"></i>
               Users
               <% end %>
             </li>
             <!--ブックス-->
             <li class="nav-item">
               <%= link_to books_path, class: 'nav-link text-white' do %>
-              <i class="fa-solid fa-book-open"></i>
+              <i class="fas fa-book-open"></i>
               Books
               <% end %>
             </li>
             <!--ログアウト-->
             <li class="nav-item">
               <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link text-white' do %>
-              <i class="fa-solid fa-right-from-bracket"></i>
+              <i class="fas fa-sign-out-alt"></i>
               Log out
               <% end %>
             </li>
-            
+
             <!--未ログイン状態の場合-->
             <% else %>
-            
+
             <!--ホーム-->
             <li class="nav-item">
               <%= link_to root_path, class: 'nav-link text-white' do %>
-              <i class="fa-solid fa-house"></i>
+              <i class="fas fa-home"></i>
               Home
               <% end %>
             </li>
             <!--アバウト-->
             <li class="nav-item">
               <%= link_to home_about_path, class: 'nav-link text-white' do %>
-              <i class="fa-solid fa-link"></i>
+              <i class="fas fa-link"></i>
               About
               <% end %>
             </li>
             <!--サインアップ-->
             <li class="nav-item">
               <%= link_to new_user_registration_path, class: 'nav-link text-white' do %>
-              <i class="fa-solid fa-user-plus"></i>
+              <i class="fas fa-user-plus"></i>
               Sign up
               <% end %>
             </li>
             <!--ログイン-->
             <li class="nav-item">
               <%= link_to new_user_session_path, class: 'nav-link text-white' do %>
-              <i class="fa-solid fa-right-to-bracket"></i>
+              <i class="fas fa-sign-in-alt"></i>
               Log in
               <% end %>
             </li>
@@ -96,7 +96,7 @@
       </nav>
     </header>
     <!--ヘッダーここまで-->
-    
+
     <main>
     <%= yield %>
     </main>
